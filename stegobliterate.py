@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     # flip chosen bits in image bytes
     for i in range(n):
-        im_bytes[i] ^= (1 << flip_bits[i])
+        im_bytes[i] ^= 1 << flip_bits[i]
 
     # convert output back to image object
     output_image = Image.frombytes(mode, size, bytes(im_bytes))

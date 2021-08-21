@@ -6,6 +6,7 @@ USAGE_MSG = "Usage: python3 stegobliterate.py <original image> <output filename>
 # the most significant bit
 BIT_CHOICES = [(0, 0.5), (1, 0.3), (2, 0.2)]
 
+
 if __name__ == "__main__":
 
     from PIL import Image

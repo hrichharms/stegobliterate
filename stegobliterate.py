@@ -28,7 +28,6 @@ if __name__ == "__main__":
         print(f"Specified file not found!\n{USAGE_MSG}")
         exit()
     im_bytes = list(im.tobytes())
-    mode, size = im.mode, im.size
     n = len(im_bytes)
 
     # decide which bits to flip in each byte of the image
@@ -43,7 +42,7 @@ if __name__ == "__main__":
         im_bytes[i] ^= 1 << flip_bits[i]
 
     # convert output back to image object
-    output_image = Image.frombytes(mode, size, bytes(im_bytes))
+    output_image = Image.frombytes(im.mode, im.size, bytes(im_bytes))
 
     # write output image to given output filename
     output_image.save(argv[2])
